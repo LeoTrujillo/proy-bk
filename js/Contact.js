@@ -5,7 +5,15 @@
 //Al final muestra un alert con los datos del modelo ingresados en el archivo main
 
 var Contact = Backbone.Model.extend({
+  defaults: {  //definimos los valores que tendra por default el modelo
+    name: "",
+    email:"",
+    phone:"",
+  },
   initialize: function (attr){
-  window.trazar("<strong>agregaste el contacto </strong> " + attr.name + " " + attr.email + " " + attr.phone);
+    //evento on de backbone agregamos change con dos puntos para diferenciarlos
+    this.on('change:name', this.onChangeName,this);
+    this.on('change:email', this.onChangeEmail,this);
+    this.on('change:phone', this.onChangePhone,this);
   }
 });
