@@ -1,4 +1,4 @@
-var contacts; //collecion de contactos en backbone
+var contacts; //coleccion de contactos en backbone
 var num_contacts; //contador de contactos
 
 
@@ -25,32 +25,37 @@ $(document).ready(function(){
       {name:"Hipo Potamo", email:"hipopotamo@correo.com", phone:"12334567890", id:"3"}
     ]);
   
+  onChangeContacts(null,null);
+
   contacts.on({"add":onChangeContacts});
     
 
 //Para crear un modelo de contacto en backbone
 //pasamos los datos al objeto que se creo en otro archivo js con el nombre de dicho objeto
-  $(".add-contact").click(function(){
+  $("#create-contact").click(function(){
     var contact = new Contact ({
-      name:"Leonardo",
-      email: "leonardotrujillor@correo.com",
+      name:"Jito Mate",
+      email: "jitomate@correo.com",
       phone : "1234567890"
     });
+    contacts.add(contact); //agregamos el contacto a la coleccion
     window.trazar(JSON.stringify(contact.toJSON()));
   });
 
 });
 
 function onChangeContacts (model,collection){
-    $("#Contacts").html("<ul></ul>");
+  //para pintar los contactos que tienen la coleccion
+    $("#Contacts").html("<ul></ul>"); 
     contacts.each(pintaContact);
   }
 
 function pintaContact (data){
     //para renderear el contacto que se acaba de agregar creo una variable para almacenar el nodo y en este caso queda
-    $div = $("<li>",{name: "name" + data.name});
+    $div = $("<li>",{id: "ref_contact" + data.cid});
     //en la variable obtengo el nombre del contacto
-    $div.html(data.get("name") + " " + data.name);
+    $div.html(data.get("name"));
+    $div.data("id_contact", data.cid)
     $div.data('name', data.name);
     $("#Contacts ul").append($div);
   }
