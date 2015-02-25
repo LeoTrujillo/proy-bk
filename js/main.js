@@ -28,7 +28,7 @@ $(document).ready(function(){
   onChangeContacts(null,null);
 
   contacts.on({"add":onChangeContacts});
-    
+   num_contacts = contacts.length + 1; //para agregar identificadores diferentes a cada contacto
 
 //Para crear un modelo de contacto en backbone
 //pasamos los datos al objeto que se creo en otro archivo js con el nombre de dicho objeto
@@ -36,12 +36,17 @@ $(document).ready(function(){
     var contact = new Contact ({
       name:"Jito Mate",
       email: "jitomate@correo.com",
-      phone : "1234567890"
+      phone : "1234567890",
+      id: num_contacts
     });
     contacts.add(contact); //agregamos el contacto a la coleccion
     window.trazar(JSON.stringify(contact.toJSON()));
+    num_contacts ++;
+    //contador de contactos
+    $(".account").append(contacts.length);
   });
 
+  
 });
 
 function onChangeContacts (model,collection){

@@ -4,6 +4,15 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <title>Agenda con backbone</title>
+
+  <script type="text/template" id="contact_template">
+    <div class="jumbotron">
+      <h1>Jumbotron</h1>
+      <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+      <p><a class="btn btn-primary btn-lg">Learn more</a></p>
+    </div>
+  </script>
+
 </head>
 <body>
 <div class="container">
@@ -41,8 +50,8 @@
       </div>
     </div>
     <hr>
-    <h2>Contactos <span class="badge">0</span></h2>
     <p class="contacts alert alert-dismissible alert-success"></p>
+    <h2>Contactos <span class="badge account"></span></h2>
     <div id="Contacts"></div>
 </div>
 <script src="js/lib/jquery-1.11.2.js"></script>
@@ -50,5 +59,6 @@
 <script src="js/lib/backbone.js"></script>
 <script src="js/main.js"></script>
 <script src="js/models/Contact.js"></script>
+<script src="js/views/ContactView.js"></script>
 </body>
 </html>
