@@ -6,10 +6,18 @@
   <title>Agenda con backbone</title>
 
   <script type="text/template" id="contact_template">
-    <div class="jumbotron">
-      <h1>Jumbotron</h1>
-      <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-      <p><a class="btn btn-primary btn-lg">Learn more</a></p>
+    <div class="jumbotron" data-id=<%= id %>>
+      <h1 id="contact_name"><%= name %></h1>
+      <p id="contact_email"><%= email %></p>
+      <p id="contact_phone"><%= phone %></p>
+    </div>
+  </script>
+
+  <script type="text/template" id="boton_template">
+    <div class="list-group">
+      <a data-id=<%= id %> href="#" class="list-group-item">
+        <%= name %>
+      </a>
     </div>
   </script>
 
@@ -50,9 +58,18 @@
       </div>
     </div>
     <hr>
-    <p class="contacts alert alert-dismissible alert-success"></p>
-    <h2>Contactos <span class="badge account"></span></h2>
-    <div id="Contacts"></div>
+    <div class="col-sm-6">
+      <!-- Contactos -->
+      <h2>Contactos <span class="badge account"></span></h2>
+      <div id="Contacts">
+      </div>
+      <!-- /contactos -->
+    </div>
+    <div class="col-sm-6">
+      <!-- contact details -->
+      <div id="details"></div>
+      <!-- /contact details -->
+    </div>
 </div>
 <script src="js/lib/jquery-1.11.2.js"></script>
 <script src="js/lib/underscore.js"></script>
@@ -60,5 +77,6 @@
 <script src="js/main.js"></script>
 <script src="js/models/Contact.js"></script>
 <script src="js/views/ContactView.js"></script>
+<script src="js/views/BotonView.js"></script>
 </body>
 </html>

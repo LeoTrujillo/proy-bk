@@ -52,9 +52,11 @@ $(document).ready(function(){
 function onChangeContacts (model,collection){
   //para pintar los contactos que tienen la coleccion
     $("#Contacts").html("<ul></ul>"); 
-    contacts.each(pintaContact);
+    //contacts.each(pintaContact);
+    //Ahora pintamos la lista de contactos pero desde una vista
+    var botonView = new BotonView ({el:$("#Contacts ul"), collection: contacts});
   }
-
+/*
 function pintaContact (data){
     //para renderear el contacto que se acaba de agregar creo una variable para almacenar el nodo y en este caso queda
     $div = $("<li>",{id: "ref_contact" + data.cid});
@@ -62,8 +64,12 @@ function pintaContact (data){
     $div.html(data.get("name"));
     $div.data("id_contact", data.cid)
     $div.data('name', data.name);
+    $div.click(function (){
+      var contactView = new ContactView({el:$("#details"), model:data});
+    });
     $("#Contacts ul").append($div);
   }
+*/
 
 //esta funcion sirve para agregar el texto en la clase contacts sobre los datos que se agregaron el objeto contacto
 //hacemos uso del metoso append de jquery
