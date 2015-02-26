@@ -2,21 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <title>Agenda con backbone</title>
 
   <script type="text/template" id="contact_template">
-    <div class="jumbotron" data-id=<%= id %>>
+    <div style="text-align:center;" class="jumbotron" data-id=<%= id %>>
+      <img class="img-circle img-responsive" style="margin:0 auto;" src="<%= img %>" width="200">
       <h1 id="contact_name"><%= name %></h1>
-      <p id="contact_email"><%= email %></p>
-      <p id="contact_phone"><%= phone %></p>
+      <p id="contact_email"><span class="glyphicon glyphicon-envelope"></span> <%= email %></p>
+      <p id="contact_phone"><span class="glyphicon glyphicon-phone"></span> <%= phone %></p>
     </div>
   </script>
 
   <script type="text/template" id="boton_template">
-    <div class="list-group">
+    <div class="list-group" style="text-align:center">
       <a data-id=<%= id %> href="#" class="list-group-item">
-        <%= name %>
+       <span class="glyphicon glyphicon-user"></span> <%= name %>
       </a>
     </div>
   </script>
@@ -58,14 +61,14 @@
       </div>
     </div>
     <hr>
-    <div class="col-sm-6">
+    <div class="col-sm-3">
       <!-- Contactos -->
       <h2>Contactos <span class="badge account"></span></h2>
       <div id="Contacts">
       </div>
       <!-- /contactos -->
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-9">
       <!-- contact details -->
       <div id="details"></div>
       <!-- /contact details -->

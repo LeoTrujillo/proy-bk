@@ -20,9 +20,25 @@ $(document).ready(function(){
    });
 
   contacts = new ContactsCollection([
-      {name:"Leonardo Trujillo", email:"leonardotrujillo@correo.com", phone:"12334567890", id: "1"},
-      {name:"Concha Queta", email:"conchaqueta@correo.com", phone:"12334567890", id:"2"},
-      {name:"Hipo Potamo", email:"hipopotamo@correo.com", phone:"12334567890", id:"3"}
+      {
+        name:"Mario Bros", 
+        email:"mariobros@correo.com", 
+        phone:"12334567890", 
+        img:"http://i788.photobucket.com/albums/yy164/Rene22283/MarioMug.jpg", 
+        id: "1"
+      },
+      {
+        name:"Princesa Durazno", 
+        email:"princesadurazno@correo.com", 
+        phone:"12334567890", 
+        img:"http://lrdmtv.fr/mytweeter/images/avatarpeach.png", 
+        id:"2"},
+      {
+        name:"Toad", 
+        email:"toad@correo.com", 
+        phone:"12334567890", 
+        img:"http://www.herewegomario.com/wp-content/themes/UpstartBloggerMinim/ubminim/images/NSM_toad.jpg", 
+        id:"3"}
     ]);
   
   onChangeContacts(null,null);
@@ -30,6 +46,8 @@ $(document).ready(function(){
   contacts.on({"add":onChangeContacts});
    num_contacts = contacts.length + 1; //para agregar identificadores diferentes a cada contacto
 
+   //contador de contactos inicializado
+    $(".account").append(contacts.length);
 //Para crear un modelo de contacto en backbone
 //pasamos los datos al objeto que se creo en otro archivo js con el nombre de dicho objeto
   $("#create-contact").click(function(){
@@ -37,12 +55,14 @@ $(document).ready(function(){
       name:"Jito Mate",
       email: "jitomate@correo.com",
       phone : "1234567890",
+      img: "http://www.infojardin.com/foro/image.php?u=144071&dateline=1336926907",
       id: num_contacts
     });
     contacts.add(contact); //agregamos el contacto a la coleccion
     window.trazar(JSON.stringify(contact.toJSON()));
     num_contacts ++;
     //contador de contactos
+    $(".account").html("");
     $(".account").append(contacts.length);
   });
 
