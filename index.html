@@ -5,25 +5,28 @@
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/estilos.css">
   <title>Agenda con backbone</title>
 
+<!-- vista de contacto -->
   <script type="text/template" id="contact_template">
-    <div style="text-align:center;" class="jumbotron" data-id=<%= id %>>
-      <img class="img-circle img-responsive" style="margin:0 auto;" src="<%= img %>" width="200">
+    <div style="text-align:center;" class="detail-contact" data-id=<%= id %>>
+      <img class="avatar img-circle img-responsive" src="<%= img %>" width="200">
       <h1 id="contact_name"><%= name %></h1>
       <p id="contact_email"><span class="glyphicon glyphicon-envelope"></span> <%= email %></p>
       <p id="contact_phone"><span class="glyphicon glyphicon-phone"></span> <%= phone %></p>
     </div>
   </script>
-
+<!-- /vista de contacto -->
+<!-- vista de el boton contato -->
   <script type="text/template" id="boton_template">
-    <div class="list-group" style="text-align:center">
+    <div class="list-group">
       <a data-id=<%= id %> href="#" class="list-group-item">
        <span class="glyphicon glyphicon-user"></span> <%= name %>
       </a>
     </div>
   </script>
-
+<!-- /vista de boton contacto -->
 </head>
 <body>
 <div class="container">
