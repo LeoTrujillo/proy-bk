@@ -1,9 +1,30 @@
 var contacts; //coleccion de contactos en backbone
 var num_contacts; //contador de contactos
-
+var router; //Router
 
 
 $(document).ready(function(){
+// creamos el router
+  router = new Router();
+  Backbone.history.start();
+
+//navegar a las rutas definidas
+  $("#r-help").click(function() {
+    router.navigate("help", {trigger:true});
+  });
+
+  $("#r-about").click(function(){
+    router.navigate("about", {trigger:true});
+  });
+
+  $("#r-contact").click(function(){
+    var id = $(".list-group-item").data("id");
+    if (id != undefined) {
+      router.navigate("contact/" + id, {trigger:true});
+    };
+  });
+
+//toggle de boton y show de formulario
   var txt = $(".texto");
   txt.hide();
   $('.boton').click(function(){
@@ -46,7 +67,7 @@ $(document).ready(function(){
   contacts.on({"add":onChangeContacts});
    num_contacts = contacts.length + 1; //para agregar identificadores diferentes a cada contacto
 
-   //contador de contactos inicializado
+//contador de contactos inicializado
     $(".account").append(contacts.length);
 //Para crear un modelo de contacto en backbone
 //pasamos los datos al objeto que se creo en otro archivo js con el nombre de dicho objeto
@@ -66,7 +87,7 @@ $(document).ready(function(){
     $(".account").append(contacts.length);
   });
 
-  
+
 });
 
 function onChangeContacts (model,collection){

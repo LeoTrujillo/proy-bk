@@ -21,7 +21,7 @@
 <!-- vista de el boton contato -->
   <script type="text/template" id="boton_template">
     <div class="list-group">
-      <a data-id=<%= id %> href="#" class="list-group-item">
+      <a id="r-contact" data-id=<%= id %> href="#" class="list-group-item">
        <span class="glyphicon glyphicon-user"></span> <%= name %>
       </a>
     </div>
@@ -29,6 +29,33 @@
 <!-- /vista de boton contacto -->
 </head>
 <body>
+<!-- Navbar -->
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Backbone</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#contactos">Contactos <span class="sr-only">(current)</span></a></li>
+        <li><a href="#sobre" id="r-about">Sobre</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#ayuda" id="r-help">Ayuda</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- /Navbar -->
 <div class="container">
     <button class="btn btn-primary boton" style="margin-top:16px;">Agregar Contacto</button> <br><br>
     <div class="panel panel-primary texto">
@@ -78,11 +105,14 @@
     </div>
 </div>
 <script src="js/lib/jquery-1.11.2.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script src="js/lib/underscore.js"></script>
 <script src="js/lib/backbone.js"></script>
 <script src="js/main.js"></script>
 <script src="js/models/Contact.js"></script>
 <script src="js/views/ContactView.js"></script>
 <script src="js/views/BotonView.js"></script>
+<script src="js/router/Router.js"></script>
 </body>
 </html>
