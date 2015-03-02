@@ -7,26 +7,6 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/estilos.css">
   <title>Agenda con backbone</title>
-
-<!-- vista de contacto -->
-  <script type="text/template" id="contact_template">
-    <div style="text-align:center;" class="detail-contact" data-id=<%= id %>>
-      <img class="avatar img-circle img-responsive" src="<%= img %>" width="200">
-      <h1 id="contact_name"><%= name %></h1>
-      <p id="contact_email"><span class="glyphicon glyphicon-envelope"></span> <%= email %></p>
-      <p id="contact_phone"><span class="glyphicon glyphicon-phone"></span> <%= phone %></p>
-    </div>
-  </script>
-<!-- /vista de contacto -->
-<!-- vista de el boton contato -->
-  <script type="text/template" id="boton_template">
-    <div class="list-group">
-      <a id="r-contact" data-id=<%= id %> href="#" class="list-group-item">
-       <span class="glyphicon glyphicon-user"></span> <%= name %>
-      </a>
-    </div>
-  </script>
-<!-- /vista de boton contacto -->
 </head>
 <body>
 <!-- Navbar -->
@@ -104,15 +84,50 @@
       <!-- /contact details -->
     </div>
 </div>
-<script src="js/lib/jquery-1.11.2.js"></script>
+
+<!-- Templates -->
+
+<!-- vista de contacto -->
+  <script type="text/template" id="contact_template">
+    <div style="text-align:center;" class="detail-contact" data-id=<%= id %>>
+      <img class="avatar img-circle img-responsive" src="<%= img %>" width="200">
+      <h1 id="contact_name"><%= name %></h1>
+      <p id="contact_email"><span class="glyphicon glyphicon-envelope"></span> <%= email %></p>
+      <p id="contact_phone"><span class="glyphicon glyphicon-phone"></span> <%= phone %></p>
+    </div>
+  </script>
+<!-- /vista de contacto -->
+<!-- vista de el boton contato -->
+  <script type="text/template" id="boton_template">
+    <div class="list-group">
+      <a id="r-contact" data-id=<%= id %> href="#" class="list-group-item">
+       <span class="glyphicon glyphicon-user"></span> <%= name %>
+      </a>
+    </div>
+  </script>
+<!-- /vista de boton contacto -->
+<!-- vista help -->
+<script type="text/template" id="help-template">
+  <h1>
+    hola mundo soy la vista de ayuda
+  </h1>
+</script>
+<!-- /vista help -->
+
+
+<!-- /Templates -- >
+
 <!-- Latest compiled and minified JavaScript -->
+<script src="js/lib/jquery-1.11.2.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script src="js/lib/underscore.js"></script>
 <script src="js/lib/backbone.js"></script>
-<script src="js/main.js"></script>
+<script src="js/app.js"></script>
+<script src="js/collections/contacts.js"></script>
 <script src="js/models/Contact.js"></script>
-<script src="js/views/ContactView.js"></script>
-<script src="js/views/BotonView.js"></script>
-<script src="js/router/Router.js"></script>
+<script src="js/views/list.js"></script>
+<script src="js/views/detail.js"></script>
+<script src="js/router/router.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

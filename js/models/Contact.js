@@ -4,7 +4,7 @@
 //click en el boton de add-contact.
 //Al final muestra un alert con los datos del modelo ingresados en el archivo main
 
-var Contact = Backbone.Model.extend({
+Agenda.Models.Contact = Backbone.Model.extend({
   defaults: {  //definimos los valores que tendra por default el modelo
     name: "",
     email:"",

@@ -1,3 +1,9 @@
+//Ejecuta el codigo principal de la aplicacion
+
+$(function (){
+  Agenda.app = new Agenda.Router();
+});
+/*
 var contacts; //coleccion de contactos en backbone
 var num_contacts; //contador de contactos
 var router; //Router
@@ -17,13 +23,13 @@ $(document).ready(function(){
     router.navigate("about", {trigger:true});
   });
 
-  $("#r-contact").click(function(){
+  $("#r-contact").click(function(){ //todavia no funciona esta ruta
     var id = $(".list-group-item").data("id");
     if (id != undefined) {
       router.navigate("contact/" + id, {trigger:true});
     };
   });
-
+*/
 //toggle de boton y show de formulario
   var txt = $(".texto");
   txt.hide();
@@ -35,7 +41,7 @@ $(document).ready(function(){
     txt.toggle();
     $(".boton").show();
   });
-    
+/*    
   var ContactsCollection = Backbone.Collection.extend({
        model:Contact
    });
@@ -97,23 +103,10 @@ function onChangeContacts (model,collection){
     //Ahora pintamos la lista de contactos pero desde una vista
     var botonView = new BotonView ({el:$("#Contacts ul"), collection: contacts});
   }
-/*
-function pintaContact (data){
-    //para renderear el contacto que se acaba de agregar creo una variable para almacenar el nodo y en este caso queda
-    $div = $("<li>",{id: "ref_contact" + data.cid});
-    //en la variable obtengo el nombre del contacto
-    $div.html(data.get("name"));
-    $div.data("id_contact", data.cid)
-    $div.data('name', data.name);
-    $div.click(function (){
-      var contactView = new ContactView({el:$("#details"), model:data});
-    });
-    $("#Contacts ul").append($div);
-  }
-*/
 
 //esta funcion sirve para agregar el texto en la clase contacts sobre los datos que se agregaron el objeto contacto
 //hacemos uso del metoso append de jquery
 window.trazar = function (contact){
   $(".contacts").append(contact + "<br>");
 };
+*/
