@@ -74,7 +74,8 @@
     <div class="col-sm-3">
       <!-- Contactos -->
       <h2>Contactos <span class="badge account"></span></h2>
-      <div id="Contacts">
+      <div class="Contacts">
+        <ul class="list"></ul>
       </div>
       <!-- /contactos -->
     </div>
@@ -83,36 +84,34 @@
       <div id="details"></div>
       <!-- /contact details -->
     </div>
+    <div id="contactos" class="container">
+      
+    </div>
 </div>
 
 <!-- Templates -->
 
 <!-- vista de contacto -->
-  <script type="text/template" id="contact_template">
-    <div style="text-align:center;" class="detail-contact" data-id=<%= id %>>
-      <img class="avatar img-circle img-responsive" src="<%= img %>" width="200">
-      <h1 id="contact_name"><%= name %></h1>
-      <p id="contact_email"><span class="glyphicon glyphicon-envelope"></span> <%= email %></p>
-      <p id="contact_phone"><span class="glyphicon glyphicon-phone"></span> <%= phone %></p>
+  <script type="text/x-handlebars-template" id="contact_template">
+    <div style="text-align:center;" class="detail-contact">
+      <img class="avatar img-circle img-responsive" src="{{ img }}" width="200">
+      <h1 id="contact_name">{{ name }}</h1>
+      <p id="contact_email"><span class="glyphicon glyphicon-envelope"></span> correo
+      <p id="contact_phone"><span class="glyphicon glyphicon-phone"></span>
+       {{ phone }}
+       </p>
     </div>
   </script>
 <!-- /vista de contacto -->
 <!-- vista de el boton contato -->
-  <script type="text/template" id="boton_template">
+  <script type="text/x-handlebars-template" id="boton_template">
     <div class="list-group">
-      <a id="r-contact" data-id=<%= id %> href="#" class="list-group-item">
-       <span class="glyphicon glyphicon-user"></span> <%= name %>
+      <a href="#" class="list-group-item">
+       <span class="glyphicon glyphicon-user user"></span> {{name}}
       </a>
     </div>
   </script>
 <!-- /vista de boton contacto -->
-<!-- vista help -->
-<script type="text/template" id="help-template">
-  <h1>
-    hola mundo soy la vista de ayuda
-  </h1>
-</script>
-<!-- /vista help -->
 
 
 <!-- /Templates -- >
@@ -121,12 +120,14 @@
 <script src="js/lib/jquery-1.11.2.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script src="js/lib/underscore.js"></script>
+<script src="js/lib/handlebars-v3.0.0.js"></script>
 <script src="js/lib/backbone.js"></script>
 <script src="js/app.js"></script>
 <script src="js/collections/contacts.js"></script>
 <script src="js/models/Contact.js"></script>
 <script src="js/views/list.js"></script>
 <script src="js/views/detail.js"></script>
+<script src="js/views/contact.js"></script>
 <script src="js/router/router.js"></script>
 <script src="js/main.js"></script>
 </body>

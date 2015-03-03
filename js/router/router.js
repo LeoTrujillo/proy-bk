@@ -34,15 +34,8 @@ Agenda.Router = Backbone.Router.extend({
   addContact : function (name) {
     this.contacts.add(new Agenda.Models.Contact({
       name : name,
-      email : email,
+      //email : email,
       phone : phone
     }));
-  },
-  ShowContact : function(id){
-    var item = contacts.collecction.get(id); //obtenemos el id del contacto
-    if(item != undefined){
-      $("#details").html("");
-      var contactView = new ContactView({el:$("#details"), model:item});
-    }
   }
 });
